@@ -11,15 +11,10 @@
 |
 */
 
+    use App\Http\Controllers\HomeController;
     use Illuminate\Support\Facades\Route;
     use function foo\func;
 
-    Route::get('/', function () {
-    return view('blog');
-})->name('home');
-    Route::get('/profile', function () {
-        return view('profile');
-    })->name('profile');
-    Route::get('/posts', function () {
-        return view('posts');
-    })->name('posts');
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+    Route::get('/posts', 'PostController@index')->name('posts');
